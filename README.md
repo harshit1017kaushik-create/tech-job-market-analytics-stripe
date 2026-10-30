@@ -6,6 +6,8 @@
 
 The project uses Python for data processing and analysis, MySQL for querying and validating data, and Power BI to build an interactive dashboard that helps users explore hiring trends.
 
+**Live Website:** https://harshit1017kaushik-create.github.io/tech-job-market-analytics-stripe/#mix
+
 ## Objectives
 
 - Analyze the distribution of job postings across job categories and departments.
