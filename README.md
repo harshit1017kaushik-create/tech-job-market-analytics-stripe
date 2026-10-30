@@ -34,7 +34,7 @@ The dataset was collected from the publicly accessible Stripe Greenhouse job boa
 
 **Data source:** https://boards-api.greenhouse.io/v1/boards/stripe/jobs?content=true
 
-The featured dataset contains **720 job postings and 42 columns**.
+The featured dataset contains **720 job postings and 43 columns**.
 
 The data includes job-related information such as titles, departments, locations, job URLs, seniority classifications, and skill keyword indicators.
 
@@ -52,21 +52,23 @@ The data includes job-related information such as titles, departments, locations
 
 ## Power BI Dashboard
 
-The dashboard includes the following KPIs and visualizations.
+The interactive Power BI dashboard provides an overview of job postings, category distribution, seniority levels, hiring locations, and technical skill mentions.
 
 ### Key Performance Indicators
 
-- Total Job Postings
-- Unique Job Categories
-- SQL Keyword Mentions
-- Python Keyword Mentions
+| KPI | Value |
+|---|---:|
+| Total Job Postings | 720 |
+| Unique Job Categories | 17 |
+| SQL Keyword Mentions | 150 |
+| Python Keyword Mentions | 87 |
 
-### Visualizations
+### Dashboard Visualizations
 
-- **Job Postings by Category:** Compares the number of postings across job categories.
-- **Job Postings by Seniority Level:** Shows how postings are distributed by seniority classification.
-- **Top Hiring Locations:** Highlights locations with the most job postings.
-- **SQL vs. Python Demand by Department:** Compares SQL and Python keyword mentions across departments.
+- Job Postings by Category
+- Job Postings by Seniority Level
+- Top 5 Hiring Locations
+- SQL vs Python Demand by Department
 
 ### Interactive Filters
 
@@ -77,27 +79,160 @@ Users can explore the dashboard using slicers for:
 - Department
 - Seniority Level
 
-Hover over chart bars to view exact values through tooltips. Use the slicers to explore how the distributions change for different categories, locations, departments, and seniority levels.
+Hover over chart bars to view exact values through tooltips. Use the slicers to explore how distributions change for different categories, locations, departments, and seniority levels.
 
-## Initial Findings
+## Dashboard Data Labels & Insights
 
-The analysis produced the following observations from the collected dataset:
+The following numerical results were calculated directly from the featured CSV dataset containing 720 job postings.
 
-- **720 job postings** were included in the featured dataset.
-- **17 job categories** were represented in the dashboard.
-- SQL appeared as a keyword in **150 postings**, while Python appeared in **87 postings**.
-- Singapore, Dublin, and Bengaluru were among the leading locations by posting count.
-- A large portion of postings had an unspecified seniority classification, highlighting a limitation of classifying seniority from available job-posting information.
+### 1. Job Postings by Category
 
-These are observations from the collected dataset, not necessarily a complete picture of Stripe's hiring activity.
+**Chart type:** Horizontal bar chart
+
+| Job Category | Job Postings | Percentage |
+|---|---:|---:|
+| Sales / Business Development | 173 | 24.03% |
+| Software Engineering | 128 | 17.78% |
+| Strategy / Operations | 83 | 11.53% |
+| Other | 59 | 8.19% |
+| Technical Solutions | 54 | 7.50% |
+| Product | 43 | 5.97% |
+| Risk / Fraud | 38 | 5.28% |
+| Marketing | 35 | 4.86% |
+| Customer Success / Support | 23 | 3.19% |
+| Internship | 22 | 3.06% |
+| Human Resources | 13 | 1.81% |
+| Legal / Compliance | 13 | 1.81% |
+| Finance | 12 | 1.67% |
+| AI / Machine Learning | 12 | 1.67% |
+| Data Analytics | 9 | 1.25% |
+| Data Engineering | 2 | 0.28% |
+| Security | 1 | 0.14% |
+
+**Key Insights:**
+
+- Sales / Business Development leads with 173 postings, representing 24.03% of the dataset.
+- Software Engineering ranks second with 128 postings (17.78%).
+- Strategy / Operations contributes 83 postings (11.53%).
+- The top three categories account for 43.34% of all collected postings.
+- Data Analytics, Data Engineering, and Security have comparatively fewer classified postings.
+
+**Business Interpretation:**
+
+The distribution shows that the collected job postings are concentrated in business development, software engineering, and strategy-related roles. It also demonstrates that the company recruits across a wide range of technical and non-technical functions.
+
+### 2. Job Postings by Seniority Level
+
+**Chart type:** Column chart
+
+| Seniority Level | Job Postings | Percentage |
+|---|---:|---:|
+| Unspecified | 417 | 57.92% |
+| Lead / Manager | 220 | 30.56% |
+| Staff / Principal | 47 | 6.53% |
+| Intern | 22 | 3.06% |
+| Senior | 12 | 1.67% |
+| Entry Level | 1 | 0.14% |
+| Executive / Director | 1 | 0.14% |
+
+**Key Insights:**
+
+- Unspecified seniority represents the largest group, with 417 postings (57.92%).
+- Lead / Manager positions account for 220 postings (30.56%).
+- Staff / Principal roles contribute 47 postings (6.53%).
+- Internship positions account for 22 postings (3.06%).
+- Senior, Entry Level, and Executive / Director classifications have relatively low counts.
+
+**Business Interpretation:**
+
+The large unspecified category indicates that seniority information is not clearly identifiable in many job postings using the project's classification rules. Therefore, seniority-based conclusions should be interpreted carefully rather than assuming that unspecified roles represent a particular experience level.
+
+### 3. Top 5 Hiring Locations
+
+**Chart type:** Horizontal bar chart
+
+| Rank | Location | Job Postings | Percentage of Total |
+|---:|---|---:|---:|
+| 1 | Singapore | 50 | 6.94% |
+| 2 | Dublin | 46 | 6.39% |
+| 3 | Bengaluru | 34 | 4.72% |
+| 4 | London | 32 | 4.44% |
+| 5 | Mexico City | 20 | 2.78% |
+
+**Key Insights:**
+
+- Singapore leads the displayed locations with 50 postings.
+- Dublin follows closely with 46 postings.
+- Bengaluru ranks third with 34 postings.
+- London and Mexico City have 32 and 20 postings, respectively.
+- The five displayed locations together account for 182 postings, or 25.28% of the dataset.
+
+**Business Interpretation:**
+
+The location distribution highlights several important international hiring markets. Singapore and Dublin lead the displayed locations, while Bengaluru and London also represent significant hiring activity in the collected dataset.
+
+### 4. SQL vs Python Demand by Department
+
+**Chart type:** Clustered horizontal bar chart
+
+The chart compares the number of job descriptions containing SQL and Python keywords across selected departments.
+
+| Department | Python Mentions | SQL Mentions |
+|---|---:|---:|
+| 8611 Security Analytics | 14 | 13 |
+| Global Operations | 10 | 9 |
+| 7112 Data Science | 9 | 9 |
+| 4119 Product Support | 1 | 8 |
+| 1520 Sales Operations (SS&O) | 0 | 10 |
+
+**Key Insights:**
+
+- Security Analytics has the highest Python mentions (14) and SQL mentions (13) among the five displayed departments.
+- Global Operations records 10 Python mentions and 9 SQL mentions.
+- Data Science has equal mentions of Python and SQL, with 9 each.
+- Product Support shows more SQL mentions (8) than Python mentions (1).
+- Sales Operations has 10 SQL mentions and no Python mentions in the collected data.
+
+**Business Interpretation:**
+
+The comparison shows that technical skill mentions vary across departments. Security Analytics and Data Science show demand for both Python and SQL, while Product Support and Sales Operations have more SQL mentions than Python.
+
+This can help job seekers understand how technical skill mentions differ across business functions.
+
+## Overall Dashboard Findings
+
+The analysis of 720 collected job postings produced the following findings:
+
+- **720 job postings** were analyzed across 17 job categories.
+- **Sales / Business Development** was the largest job category, with 173 postings (24.03%).
+- **Software Engineering** ranked second, with 128 postings (17.78%).
+- **Unspecified seniority** accounted for 417 postings (57.92%), indicating a major classification limitation.
+- **Singapore** was the leading displayed hiring location, with 50 postings.
+- **SQL appeared in 150 postings**, compared with **87 postings mentioning Python**.
+- Among the five displayed departments, Security Analytics had the highest SQL and Python keyword counts.
 
 ## Important Methodological Notes
 
 - Skill indicators represent keyword mentions in job-posting content. A mention does not necessarily mean the skill is a mandatory requirement.
 - Seniority classifications depend on the available job information and classification rules.
-- Missing location values were represented as `Unknown` for analysis.
+- Missing location values were represented as `Unknown` for analysis. The top-five location percentages use all 720 postings as the denominator.
+- Location counts use the location values as represented in the featured CSV. Different spellings or combined-location entries may be treated as separate values.
+- Department-level SQL and Python counts are calculated by summing the binary skill indicator columns for the displayed departments.
 - The `date_updated` field reflects the update information available in the collected data; it should not be assumed to represent the original publication date of each job posting.
 - Results depend on the dataset snapshot and the processing rules used in the project.
+
+## Business Interpretation
+
+This project demonstrates how publicly available job-posting data can be transformed into useful hiring-market insights.
+
+The dashboard helps explore:
+
+- Which job categories have more listed opportunities.
+- Which seniority classifications appear most frequently.
+- Which locations have greater representation in the collected postings.
+- How SQL and Python keyword mentions differ across departments.
+
+The analysis can help students, job seekers, and analysts understand patterns in job descriptions and explore the technical skills mentioned across different business functions.
 
 ## Project Files
 
@@ -115,7 +250,6 @@ Tech-Company-Job-Market-Analytics/
 └── Job_Market_Analytics.pbix
 ```
 
-*The filenames above are the intended repository names. Adjust them to match the actual files you upload.*
 
 ## How to Explore the Project
 
@@ -126,13 +260,7 @@ Tech-Company-Job-Market-Analytics/
 
 The Python environment and MySQL database connection may need to be configured locally before rerunning the workflow. Do not publish database passwords, credentials, or other secrets.
 
-## Future Improvements
 
-- Add historical snapshots to analyze changes in job postings over time.
-- Improve skill extraction using more comprehensive text-processing techniques.
-- Expand the analysis to additional companies and job boards.
-- Add more department-level and location-level comparisons.
-- Automate periodic data collection to monitor hiring trends.
 
 ## Author
 
